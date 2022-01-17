@@ -8,6 +8,7 @@ module.exports = (env) => {
 
   return {
     entry: './src/main',
+    devtool: 'eval-cheap-module-source-map',
     resolve: {
       extensions: ['.tsx', '.ts', '...']
     },

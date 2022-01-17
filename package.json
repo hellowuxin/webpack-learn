@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack --env prod"
   },
   "keywords": [],
   "author": "",

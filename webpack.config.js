@@ -3,13 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/main.jsx',
+  entry: './src/main',
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
   },
   resolve: {
-    extensions: ['.jsx', '...']
+    extensions: ['.tsx', '.ts', '...']
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -19,18 +19,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              ['@babel/preset-env', { targets: "defaults" }],
-              ["@babel/preset-react", { runtime: "automatic" }],
-            ]
-          }
-        }
-      }
+      },
     ]
   },
   output: {

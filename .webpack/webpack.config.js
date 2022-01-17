@@ -24,6 +24,22 @@ module.exports = (env) => {
           use: 'ts-loader',
           exclude: /node_modules/,
         },
+        {
+          test: /\.less$/i,
+          use: [
+            // compiles Less to CSS
+            'style-loader',
+            'css-loader',
+            {
+              loader: "less-loader",
+              options: {
+                lessOptions: {
+                  javascriptEnabled: true,
+                }
+              }
+            }
+          ],
+        },
       ]
     },
     optimization: {

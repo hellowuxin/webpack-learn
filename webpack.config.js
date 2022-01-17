@@ -12,7 +12,9 @@ module.exports = {
     extensions: ['.jsx', '...']
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
   ],
   module: {
     rules: [
@@ -24,7 +26,7 @@ module.exports = {
           options: {
             presets: [
               ['@babel/preset-env', { targets: "defaults" }],
-              ["@babel/preset-react"],
+              ["@babel/preset-react", { runtime: "automatic" }],
             ]
           }
         }

@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/components',
   resolve: {
     alias: {
@@ -48,9 +48,11 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     clean: true,
     library: {
-      name: 'DoveDesign',
-      type: 'umd'
+      type: 'module'
     },
+  },
+  experiments: {
+    outputModule: true,
   },
   externals: ['react'],
   optimization: {

@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "start": "webpack serve --open",
-    "build": "webpack --env prod"
+    "build": "webpack --config ./.webpack/library.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "html-webpack-plugin": "^5.5.0",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
+    "mini-css-extract-plugin": "^2.5.2",
     "sass": "^1.48.0",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",

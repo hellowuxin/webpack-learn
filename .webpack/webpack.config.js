@@ -1,3 +1,4 @@
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 配置
 const devConfig = require('./dev')
@@ -10,6 +11,9 @@ module.exports = (env) => {
     entry: './src/main',
     devtool: 'eval-cheap-module-source-map',
     resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '../src')
+      },
       extensions: ['.tsx', '.ts', '...']
     },
     plugins: [
